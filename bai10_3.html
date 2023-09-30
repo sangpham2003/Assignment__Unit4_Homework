@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tính Tổng Số Chia Hết Cho K</title>
+    <link rel="stylesheet" href="bai10_3.css">
+</head>
+<body>
+    <h1>Tính Tổng Số Chia Hết Cho K</h1>
+    <div id="container">
+        <label for="inputM">Nhập số M:</label>
+        <input type="number" id="inputM">
+
+        <label for="inputN">Nhập số N:</label>
+        <input type="number" id="inputN">
+
+        <label for="inputK">Nhập số K:</label>
+        <input type="number" id="inputK">
+
+        <button id="calculateButton">Tính Tổng</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const inputM = document.getElementById("inputM");
+            const inputN = document.getElementById("inputN");
+            const inputK = document.getElementById("inputK");
+            const calculateButton = document.getElementById("calculateButton");
+            const resultElement = document.getElementById("result");
+
+            calculateButton.addEventListener("click", function () {
+                const M = parseInt(inputM.value);
+                const N = parseInt(inputN.value);
+                const K = parseInt(inputK.value);
+                let sum = 0;
+
+                if (isNaN(M) || isNaN(N) || isNaN(K)) {
+                    resultElement.textContent = "Vui lòng nhập các số hợp lệ.";
+                } else if (N > M) {
+                    resultElement.textContent = "N phải nhỏ hơn hoặc bằng M.";
+                } else {
+                    for (let i = N; i <= M; i++) {
+                        if (i % K === 0) {
+                            sum += i;
+                        }
+                    }
+                    resultElement.textContent = `Tổng các số chia hết cho ${K} trong khoảng từ ${N} đến ${M} là: ${sum}`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
