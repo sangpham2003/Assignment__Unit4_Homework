@@ -1,0 +1,28 @@
+h1{
+    text-align: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.checkboxlist li{
+    list-style: none;
+    padding: 10px;
+    border: black 1px solid;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); 
+    text-align: center;
+    margin-top: 10px;
+    width: 500px;
+}
+li:hover {
+    background-color: #51ccf1;
+}
+.function button{
+    width: 100px;
+    height: 40px;
+    background-color: rgb(217, 79, 28);
+    color: black;
+}
